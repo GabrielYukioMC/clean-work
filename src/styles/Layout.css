@@ -1,0 +1,132 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Estrutura geral */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+.header {
+  background: #ffffff;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botão de tema */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Container principal */
+.main-container {
+  display: flex;
+  flex: 1;
+}
+
+/* Menu lateral */
+.sidebar {
+  width: 220px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 2rem 1rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  display: block;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.sidebar a:hover {
+  background: #e5e7eb;
+}
+
+/* Conteúdo */
+.content {
+  flex: 1;
+  padding: 2rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  margin: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease, color 0.3s ease;
+    overflow-y: hidden;
+}
+
+/* Rodapé */
+.footer {
+  background: #ffffff;
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* =====================
+   Tema Escuro
+===================== */
+.dark-mode {
+  background: #1e1e2f;
+  color: #e5e5e5;
+}
+
+.dark-mode .header,
+.dark-mode .footer,
+.dark-mode .sidebar {
+  background: #2a2a40;
+  border-color: #3a3a55;
+  color: #e5e5e5;
+}
+
+.dark-mode .content {
+  background: #2a2a40;
+  color: #e5e5e5;
+}
+
+.dark-mode .sidebar a {
+  color: #e5e5e5;
+}
+
+.dark-mode .sidebar a:hover {
+  background: #3a3a55;
+}

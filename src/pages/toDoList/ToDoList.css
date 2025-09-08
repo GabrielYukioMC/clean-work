@@ -1,0 +1,462 @@
+/* ===========================
+   // CONTAINER INÍCIO
+   =========================== */
+.todo-container {
+  font-family: Arial, sans-serif;
+  max-height: 70vh;
+  overflow-y: auto;
+  /* width: 80%; */
+}
+
+.todo-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+/* ===========================
+   // CONTAINER FIM
+   =========================== */
+
+
+/* ===========================
+   // LISTA DE TAREFAS INÍCIO
+   =========================== */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.task-left {
+  width: 90%;
+}
+
+.task-list li {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fafafa;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.task-list li:hover {
+  transform: translateY(-2px);
+}
+
+.task-list li.completed {
+  background: #e6ffe6;
+  opacity: 0.9;
+}
+/* ===========================
+   // LISTA DE TAREFAS FIM
+   =========================== */
+
+
+/* ===========================
+   // CABEÇALHO TAREFA INÍCIO
+   =========================== */
+.task-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-header input[type="checkbox"] {
+  appearance: none; /* Remove estilo padrão */
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.task-header input[type="checkbox"]:hover {
+  border-color: #2563eb;
+  box-shadow: 0 0 4px rgba(37, 99, 235, 0.3);
+}
+
+.task-header input[type="checkbox"]:checked {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.task-header input[type="checkbox"]:checked::after {
+  content: '✔';
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+
+.task-header input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid transparent;
+  font-size: 1rem;
+  background: transparent;
+  transition: border-color 0.3s;
+}
+
+.task-header input[type="text"]:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.task-header select {
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: transparent;
+  cursor: pointer;
+}
+ 
+
+.task-header .delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+
+.task-header .delete:hover {
+  transform: scale(1.2);
+    background: #000;
+}
+/* ===========================
+   // CABEÇALHO TAREFA FIM
+   =========================== */
+
+
+/* ===========================
+   // DESCRIÇÃO INÍCIO
+   =========================== */
+textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 60px;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  background: #fff;
+}
+/* ===========================
+   // DESCRIÇÃO FIM
+   =========================== */
+
+/* ===========================
+    // ACTIONS INÍCIO
+   =========================== */
+.task-actions {
+  margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column  ;
+    gap: 1.5rem;
+    /* align-items: flex-start; */
+  /* background: #000; */
+}
+
+.task-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.task-actions button:hover {
+  transform: translateY(-2px);
+    background: #ff5b5b;
+    color: #ffffff;
+}
+
+.task-actions select {
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+
+
+/* ===========================
+   // DATAS INÍCIO
+   =========================== */
+.task-dates {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+}
+/* ===========================
+   // DATAS FIM
+   =========================== */
+
+
+/* ===========================
+   // BOTÃO NOVA TAREFA INÍCIO
+   =========================== */
+.add-task-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: #2563eb;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.add-task-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+/* ===========================
+   // BOTÃO NOVA TAREFA FIM
+   =========================== */
+
+
+/* ===========================
+   // MODAL INÍCIO
+   =========================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal h3 {
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.modal input,
+.modal textarea,
+.modal select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.modal-actions .cancel {
+  background: #ccc;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-actions .cancel:hover {
+  background: #bbb;
+}
+
+.modal-actions .save {
+  background: #2563eb;
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-actions .save:hover {
+  background: #1d4ed8;
+}
+/* ===========================
+   // MODAL FIM
+   =========================== */
+
+
+/* ===========================
+   // ANIMAÇÃO MODAL INÍCIO
+   =========================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* ===========================
+   // ANIMAÇÃO MODAL FIM
+   =========================== */
+/* ===========================
+   // DARK MODE TO-DO LIST
+   =========================== */
+.dark-mode .todo-container {
+  /* background: #1e1e2f; */
+  color: #e5e5e5;
+}
+
+.dark-mode .todo-container h2 {
+  color: #f1f1f1;
+}
+
+/* Lista de tarefas */
+.dark-mode .task-list li {
+  background: #2a2a40;
+  border-color: #3a3a55;
+  color: #e5e5e5;
+}
+
+.dark-mode .task-list li.completed {
+  background: #435e43; /* verde suave */
+}
+
+
+.dark-mode .task-list li.completed textarea{
+    border: none;
+  background: #435e43; /* verde suave */
+}
+
+/* Cabeçalho da tarefa */
+.dark-mode .task-header input[type="checkbox"] {
+  background: #2a2a40;
+  border-color: #555;
+}
+
+.dark-mode .task-header input[type="checkbox"]:checked {
+  background: #4f8ef7;
+  border-color: #4f8ef7;
+}
+
+.dark-mode .task-header input[type="text"] {
+  color: #e5e5e5;
+  border-bottom: 1px solid transparent;
+}
+
+.dark-mode .task-header input[type="text"]:focus {
+  border-color: #4f8ef7;
+}
+
+.dark-mode .task-header select {
+  background: #2a2a40;
+  color: #e5e5e5;
+  border-color: #555;
+}
+
+.dark-mode .task-header .delete {
+  color: #e5e5e5;
+}
+
+/* Descrição */
+.dark-mode textarea {
+  background: #2a2a40;
+  color: #e5e5e5;
+  border-color: #555;
+}
+
+/* Actions */
+.dark-mode .task-actions select {
+  background: #2a2a40;
+  color: #e5e5e5;
+  border-color: #555;
+}
+
+/* Datas */
+.dark-mode .task-dates {
+  color: #aaa;
+}
+
+/* Botão Nova Tarefa */
+.dark-mode .add-task-btn {
+  background: #4f8ef7;
+  color: #fff;
+}
+
+.dark-mode .add-task-btn:hover {
+  background: #3a6fdc;
+}
+
+/* Modal */
+.dark-mode .modal {
+  background: #2a2a40;
+  color: #e5e5e5;
+}
+
+.dark-mode .modal input,
+.dark-mode .modal textarea,
+.dark-mode .modal select {
+  background: #1e1e2f;
+  color: #e5e5e5;
+  border: 1px solid #555;
+}
+
+.dark-mode .modal h3 {
+  color: #fff;
+}
+
+.dark-mode .modal-actions .cancel {
+  background: #555;
+  color: #fff;
+}
+
+.dark-mode .modal-actions .cancel:hover {
+  background: #666;
+}
+
+.dark-mode .modal-actions .save {
+  background: #4f8ef7;
+  color: #fff;
+}
+
+.dark-mode .modal-actions .save:hover {
+  background: #3a6fdc;
+}
+
+.dark-mode .task-actions button {
+  color: #e5e5e5;
+    background: #1e1e2f;
+}

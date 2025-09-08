@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-// import './styles/global.css'; // Se você tiver estilos globais
+// import './styles/global.css';  
 
-// Se estiver usando Context API ou Redux, adiciona aqui
 // import { Provider } from 'react-redux';
 // import { store } from './store/store';
 
